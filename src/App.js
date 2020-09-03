@@ -22,15 +22,24 @@ class App extends Component {
     this.setState({todoList: newTodoList})
   }
 
+  getEditId = (id) => {
+    // let to_edit = this.state.todoList.find((todo)=> id===todo.id)
+    // let remaining = this.state.todoList.filter((todo)=> id!==todo.id)
+  }
+
+  getDeletedId = (id) => {
+    let remaining = this.state.todoList.filter((todo)=> id!==todo.id)
+    this.setState({todoList: remaining})
+  }
+
   render() {
     return (
       <div>
         <h1>ProductiMan</h1>
         Your productivity manager...
         <hr/>
-        <CreateTodo addTodo={this.addTodo} id={this.state.count}/>
-        {/* {console.log(this.state)} */}
-        <TodoList todoList={this.state.todoList} getCompletedId={this.getCompletedId}/>
+        <CreateTodo addTodo={this.addTodo} id={this.state.count}/> <hr/>
+        <TodoList todoList={this.state.todoList} getCompletedId={this.getCompletedId} getEditId={this.getEditId} getDeletedId={this.getDeletedId}/>
       </div>
     )
   }
