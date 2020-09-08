@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { render } from '@testing-library/react'
+import React from 'react'
 import TodoListItem from './todo_list_item'
 
 const TodoList = ({todoList, getCompletedId, getEditId, getDeletedId}) => {
