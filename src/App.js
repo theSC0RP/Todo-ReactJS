@@ -70,13 +70,13 @@ class App extends Component {
         <div className="mx-3 py-2"><CreateTodo editText = {this.state.editText} addTodo={this.addTodo} id={this.state.count}/></div>
         
         <div className="row mt-3 mx-3 bg-light">
+          <div className="col-10 mt-4"><TodoList todoList={this.filterTodoList()} getCompletedId={this.getCompletedId} getEditId={this.getEditId} getDeletedId={this.getDeletedId}/></div>
           <div className="col-2">
             <div className="row my-5 mx-4"><button className="btn btn-secondary" onClick={this.handleDeleteAllClicked} style={{width: 150}}>Delete All</button></div>
             <div className="row my-5 mx-4"><button className="btn btn-secondary" onClick={this.handleShowAllClicked} style={{width: 150}}>Show All</button></div>
             <div className="row my-5 mx-4"><button className="btn btn-secondary" onClick={this.handleShowFinishedClicked} style={{width: 150}}>Show Finished</button></div>
             <div className="row my-5 mx-4"><button className="btn btn-secondary" onClick={this.handleShowOngoingClicked} style={{width: 150}}>Show Ongoing</button></div>
           </div>
-          <div className="col-10 mt-4"><TodoList todoList={this.filterTodoList()} getCompletedId={this.getCompletedId} getEditId={this.getEditId} getDeletedId={this.getDeletedId}/></div>
         </div>
       </div>
     )
